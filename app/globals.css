@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -14,14 +14,23 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
+} */
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply bg-red-100 justify-center flex;
+  /* padding: 20px; */
+}
+
+.main {
+  @apply bg-white justify-center w-full;
+}
+.navbar__title {
+  @apply border-b-2 border-gray-300 flex justify-center p-4;
+}
+.navbar__search, .navbar__btn, .navbar__result {
+  margin: 10px 20px;
+}
+
+.navbar__btn {
+  @apply flex bg-green-600 text-white rounded-lg items-center justify-center cursor-pointer p-2;
 }
