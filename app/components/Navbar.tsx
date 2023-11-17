@@ -22,7 +22,9 @@ const Navbar = () => {
         </button>
       </div>
       <div className="navbar__result">
-        Showing users
+        <p>
+         Showing users
+        </p>
       </div>
     </div>
   )

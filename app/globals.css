@@ -17,20 +17,31 @@
 } */
 
 body {
-  @apply bg-red-100 justify-center flex;
+  @apply  justify-center flex;
   /* padding: 20px; */
 }
 
 .main {
-  @apply bg-white justify-center w-full;
+  @apply  justify-center w-full;
 }
 .navbar__title {
   @apply border-b-2 border-gray-300 flex justify-center p-4;
 }
-.navbar__search, .navbar__btn, .navbar__result {
+.navbar__search, .navbar__btn, .navbar__result, .content {
   margin: 10px 20px;
 }
 
 .navbar__btn {
   @apply flex bg-green-600 text-white rounded-lg items-center justify-center cursor-pointer p-2;
+}
+
+.navbar__result {
+  @apply mb-4 pb-2 border-b-2 border-gray-200;
+}
+
+.content {
+  @apply flex justify-center items-center rounded-lg box-border border-2 border-gray-200;
+}
+.content__empty {
+  @apply justify-center items-center h-80;
 }
