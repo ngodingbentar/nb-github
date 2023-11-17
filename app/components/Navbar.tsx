@@ -2,9 +2,12 @@
 
 import { useState } from 'react'
 import { BiSearch } from 'react-icons/bi';
+import { useDispatch } from 'react-redux';
+import { setUsers } from '../store/redux/github';
 
 const Navbar = () => {
   const [search, setSearch] = useState('')
+  const dispatch = useDispatch()
 
   const doSearch = async() => {
     if (!search) {
@@ -14,6 +17,7 @@ const Navbar = () => {
         const res = await fetch(`https://api.github.com/search/users?q=${search}&per_page=5`)
         const data = await res.json()
         console.log(data)
+        dispatch(setUsers(data?.items))
       } catch (error) {
         console.log(error)
       }
