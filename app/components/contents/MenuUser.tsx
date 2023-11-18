@@ -28,7 +28,7 @@ const MenuUser = ({ user }: { user: IUser}) => {
     if (!active) {
       try {
         dispatch(setLoading(true))
-        await axios.get(`https://api.github.com/users/${user.login}/repos?per_page=5`)
+        await axios.get(`https://api.github.com/users/${user.login}/repos`)
         .then((res) => {
           console.log(res.data)
           setRepo(res.data)
@@ -42,7 +42,7 @@ const MenuUser = ({ user }: { user: IUser}) => {
   }
   return (
     <>
-      <button className="user__item" onClick={handleClick}>
+      <button className={active ? "user__item user--active" : "user__item"} onClick={handleClick}>
         <div className="flex">
           <div>
             <Image src={user.avatar_url} alt="img" width={30} height={30} />
@@ -55,7 +55,7 @@ const MenuUser = ({ user }: { user: IUser}) => {
           <IoIosArrowDown />
         )}
       </button>
-      <div className="ml-4">
+      <div className="user__repo">
         {(active && !isLoading) && <MenuRepo repo={repo} />}
       </div>
     </>

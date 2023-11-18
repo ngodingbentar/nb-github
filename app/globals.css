@@ -75,3 +75,11 @@ body {
 .loader {
   @apply absolute w-full h-screen flex justify-center items-center bg-black/30 z-10 ;
 }
+
+.user__repo {
+  @apply ml-4 max-h-[70vh] overflow-auto;
+}
+
+.user--active {
+  @apply bg-green-100 ;
+}
