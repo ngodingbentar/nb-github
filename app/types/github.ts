@@ -8,6 +8,7 @@ interface IGithub {
   github: {
     users: IUser[]
     loading: boolean
+    error: string
   }
 }
 
