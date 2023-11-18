@@ -41,6 +41,7 @@ const Navbar = () => {
           placeholder="Search User..."
           onChange={(e) => setSearch(e.target.value)}
           value={search}
+          onKeyDown={(e) => e.key === 'Enter' && doSearch()}
         />
         <button className='search__close' onClick={() => setSearch('')}>
           <IoIosCloseCircle size={20} color='#9ca3af' />
