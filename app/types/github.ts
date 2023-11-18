@@ -6,8 +6,8 @@ interface IUser {
 }
 interface IGithub {
   github: {
-    data: number
     users: IUser[]
+    loading: boolean
   }
 }
 

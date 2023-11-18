@@ -22,7 +22,7 @@ body {
 }
 
 .main {
-  @apply  justify-center w-full;
+  @apply  justify-center w-full h-screen ;
 }
 .navbar__title {
   @apply border-b-2 border-gray-300 flex justify-center p-4;
@@ -62,4 +62,8 @@ body {
 
 .card__header {
   @apply flex justify-between border-b-2 mb-1 pb-1 border-gray-300;
+}
+
+.loader {
+  @apply absolute w-full h-screen flex justify-center items-center bg-black/30 ;
 }
