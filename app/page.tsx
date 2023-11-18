@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Navbar from './components/Navbar'
-import Content from './components/Content'
+import Content from './components/contents/Content'
 
 export default function Home() {
   return (
