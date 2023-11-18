@@ -7,6 +7,7 @@ import { setUsers } from '../store/redux/github';
 
 const Navbar = () => {
   const [search, setSearch] = useState('')
+  const [searchTemp, setSearchTemp] = useState('')
   const dispatch = useDispatch()
 
   const doSearch = async() => {
@@ -21,6 +22,7 @@ const Navbar = () => {
       } catch (error) {
         console.log(error)
       }
+      setSearchTemp(search)
     }
   }
   return (
@@ -49,9 +51,11 @@ const Navbar = () => {
         </button>
       </div>
       <div className="navbar__result">
-        <p>
-         Showing users
-        </p>
+        {searchTemp && (
+          <p>
+            Showing users for {`"${searchTemp}"`}
+          </p>
+        )}
       </div>
     </div>
   )

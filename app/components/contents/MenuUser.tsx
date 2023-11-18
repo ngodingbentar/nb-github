@@ -1,7 +1,11 @@
+'use client'
+
 import { IUser } from "@/app/types/github"
 import { useState } from "react"
 import MenuRepo from "./MenuRepo"
 import axios from "axios"
+import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
+import Image from "next/image";
 
 const MenuUser = ({ user }: { user: IUser}) => {
   const[active, setActive] = useState(false)
@@ -25,7 +29,17 @@ const MenuUser = ({ user }: { user: IUser}) => {
   return (
     <>
       <button className="user__item" onClick={handleClick}>
-        <div>{user.login}</div>
+        <div className="flex">
+          <div>
+            <Image src={user.avatar_url} alt="img" width={30} height={30} />
+          </div>
+          <div className="m-auto pl-4 text-center justify-center items-center">{user.login}</div>
+        </div>
+        {active ? (
+          <IoIosArrowUp />
+        ) : (
+          <IoIosArrowDown />
+        )}
       </button>
       <div className="ml-4">
         {active && <MenuRepo repo={repo} />}
