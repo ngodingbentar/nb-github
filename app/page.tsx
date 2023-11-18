@@ -12,7 +12,6 @@ export default function Home() {
 
   return (
     <div className='main'>
-      {/* <Loader /> */}
       {isLoading && <Loader />}
       <span>
         <Navbar />

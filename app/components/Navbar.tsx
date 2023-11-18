@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { BiSearch } from 'react-icons/bi';
 import { useDispatch } from 'react-redux';
 import { setLoading, setUsers } from '../store/redux/github';
+import { IoIosCloseCircle } from "react-icons/io";
 
 const Navbar = () => {
   const [search, setSearch] = useState('')
@@ -30,7 +31,7 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div className="navbar__title">
-        Github Repositories Explore
+        Github Repositories Explorer
       </div>
       <div className="navbar__search">
         <input
@@ -41,6 +42,9 @@ const Navbar = () => {
           onChange={(e) => setSearch(e.target.value)}
           value={search}
         />
+        <button className='search__close' onClick={() => setSearch('')}>
+          <IoIosCloseCircle size={20} color='#9ca3af' />
+        </button>
       </div>
       <div className="navbar__btn">
         <button

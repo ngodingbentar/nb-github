@@ -25,10 +25,18 @@ body {
   @apply  justify-center w-full h-screen ;
 }
 .navbar__title {
-  @apply border-b-2 border-gray-300 flex justify-center p-4;
+  @apply border-b-2 border-gray-300 flex justify-center p-4 text-lg font-bold ;
 }
 .navbar__search, .navbar__btn, .navbar__result, .content {
   margin: 10px 20px;
+}
+
+.navbar__search {
+  @apply relative ;
+}
+
+.search__close {
+  @apply absolute right-2 top-0 h-full items-center flex;
 }
 
 .navbar__btn button {
@@ -65,5 +73,5 @@ body {
 }
 
 .loader {
-  @apply absolute w-full h-screen flex justify-center items-center bg-black/30 ;
+  @apply absolute w-full h-screen flex justify-center items-center bg-black/30 z-10 ;
 }
