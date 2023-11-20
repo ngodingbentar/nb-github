@@ -10,7 +10,6 @@ const Users = () => {
   return (
     <div className="users">
       {users?.map((user, index) => (
-        // <div key={index}>{user.login}</div>
         <MenuUser key={index} user={user} />
       ))}
     </div>

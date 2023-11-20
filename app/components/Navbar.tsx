@@ -59,7 +59,7 @@ const Navbar = () => {
       </div>
       <div className="navbar__result">
         {searchTemp && (
-          <p>
+          <p className='text-gray-500'>
             Showing users for {`"${searchTemp}"`}
           </p>
         )}
