@@ -9,7 +9,6 @@ const githubSlice = createSlice({
   },
   reducers: {
     setUsers: (state, action) => {
-      console.log(action.payload)
       if(action.payload.length === 0) {
         state.error = 'User not found'
       } else {

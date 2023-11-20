@@ -24,13 +24,11 @@ const MenuUser = ({ user }: { user: IUser}) => {
   }, [isLoading])
 
   const handleClick = async () => {
-    console.log(user)
     if (!active) {
       try {
         dispatch(setLoading(true))
         await axios.get(`https://api.github.com/users/${user.login}/repos`)
         .then((res) => {
-          console.log(res.data)
           setRepo(res.data)
         })
       } catch (error) {

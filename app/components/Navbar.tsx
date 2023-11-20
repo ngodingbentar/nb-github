@@ -19,7 +19,6 @@ const Navbar = () => {
       try {
         const res = await fetch(`https://api.github.com/search/users?q=${search}&per_page=5`)
         const data = await res.json()
-        console.log(data)
         dispatch(setUsers(data?.items))
         dispatch(setLoading(false))
       } catch (error) {
